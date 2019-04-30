@@ -39,6 +39,8 @@ export class CompteComponent implements OnInit {
     this.compteService.getCompteList()
       .subscribe(res => {  this.compteList = res;
         this.isLoadingResults = false;
+        console.log("ajout de log sur la branche develop");
+
       },
        err => {
         console.log(err);
