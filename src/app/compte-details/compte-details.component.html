@@ -1,0 +1,35 @@
+<div class="example-container mat-elevation-z8">
+
+  <div class="example-loading-shade" *ngIf="isLoadingResults">
+    <mat-spinner *ngIf="isLoadingResults"> </mat-spinner>
+  </div>
+
+  <div class="button-row">
+    <a mat-flat-button color="primary" [routerLink]="['/comptes']">
+      <mat-icon> list</mat-icon>
+    </a>
+  </div>
+  <mat-card class="example-card">
+
+    <mat-card-content>
+      <!--dl:  list -->
+      <dl>
+       <dt> Compte solde : </dt>
+        <dd> {{compte.solde}}</dd>
+        <dt> Compte decouvert Max :</dt>
+        <dd> {{compte.decouvertMax}}</dd>
+        <dt> Compte debit Max : </dt>
+        <dd> {{compte.debitMax}}</dd>
+        <dt> Compte titulaire : </dt>
+        <dd> {{compte.titulaire}}</dd>
+        <dt> Compte intitule : </dt>
+        <dd> {{compte.intitule}}</dd>
+      </dl>
+    </mat-card-content>
+    <mat-card-actions>
+        <a mat-flat-button color="primary" [routerLink]="['/compte-edit', compte._id]"><mat-icon>edit</mat-icon></a>
+        <a mat-flat-button color="warn" (click)="deleteCompte('compte._id')">
+     <mat-icon>delete</mat-icon> </a>
+    </mat-card-actions>
+  </mat-card>
+</div>

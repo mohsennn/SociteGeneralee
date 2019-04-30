@@ -1,0 +1,58 @@
+<div class="example-container mat-elevation-z8">
+  <div class="example-loading-shade" *ngIf="isLoadingResults">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+  </div>
+  <div class="button-row">
+    <a mat-flat-button color="primary" [routerLink]="['/comptes']">
+      <mat-icon> list</mat-icon>
+    </a>
+  </div>
+  <!-- card : est comme une liste anglar mterial  -->
+  <mat-card class="example-card">
+    <form [formGroup]="compteForm" (ngSubmit)="onFormSubmit(compteForm.value)">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="solde" formControlName="solde" [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!compteForm.get('solde').valid && compteForm.get('solde').touched"> Please enter sode</span>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder=" decouvertMax" formControlName="decouvertMax" [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!compteForm.get('decouvertMax').valid && compteForm.get('decouvertMax').touched"> Please enter
+            Max
+            Debit</span>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder=" debitMax" formControlName="debitMax" [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!compteForm.get('debitMax').valid && compteForm.get('debitMax').touched"> Please enter Max
+            Debit</span>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="titulaire" formControlName="titulaire" [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!compteForm.get('titulaire').valid && compteForm.get('titulaire').touched"> Plese enter
+            titulaire</span>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="intitule" formControlName="intitule" [errorStateMatcher]="matcher">
+
+        <mat-error>
+          <span *ngIf="!compteForm.get('intitule').valid && compteForm.get('intitule').touched">Please enter intitule
+          </span>
+        </mat-error>
+      </mat-form-field>
+      <div class="button-row">
+        <button type="submit" [disabled]="!compteForm.valid" mat-flat-button color="primary">
+          <mat-icon>save
+          </mat-icon>
+        </button>
+      </div>
+    </form>
+  </mat-card>
+</div>
