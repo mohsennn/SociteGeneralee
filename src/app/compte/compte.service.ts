@@ -17,7 +17,7 @@ export class CompteService {
   getCompteList(): Observable<Compte[]> {
     return this.http
       .get<Compte[]>(urlConf.CompteUrl)
-      .pipe(tap(comptes => console.log("fetched comptess")));
+      .pipe(tap(comptes => console.log("fetched comptess branche gestion compte")));
   }
 
   getCompte(id: number): Observable<Compte> {
