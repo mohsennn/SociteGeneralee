@@ -37,7 +37,7 @@ export class CompteComponent implements OnInit {
 
   ngOnInit() {
     this.compteService.getCompteList()
-      .subscribe(reszzzzz => {  this.compteList = reszzzz;
+      .subscribe(reszzzz => {  this.compteList = reszzzz;
         this.isLoadingResults = false;
         console.log("ajout de log sur la branche develop 04/30/2019 ");
 
